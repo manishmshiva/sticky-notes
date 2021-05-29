@@ -1,25 +1,46 @@
-import logo from './logo.svg';
-import './App.css';
+import NotesList from './components/NotesList'
+import {useState} from 'react'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const App = () => {
+  const [notes,setNotes] = useState([
+    {
+      text:"My first note",
+      date:'1/1/2021',
+      id:1
+    },
+    {
+      text:"My second note",
+      date:'2/1/2021',
+      id:2
+    },
+    {
+      text:"My third note",
+      date:'3/1/2021',
+      id:3
+    },
+    {
+      text:"My fourth note",
+      date:'4/1/2021',
+      id:4
+    },
+    {
+      text:"My fifth note",
+      date:'5/1/2021',
+      id:5
+    }
+  ])
+
+  const addNote = (noteText) => {
+    const date = new Date();
+    const newNote = {
+      text:noteText,
+      date:date.toLocaleDateString,
+      id:notes.length
+    }
+    const newNotes = [...notes,newNote]
+    setNotes(newNotes)
+  }
+  return <NotesList notes={notes} addNote={addNote}/>
 }
 
 export default App;
