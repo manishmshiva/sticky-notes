@@ -1,35 +1,19 @@
 import NotesList from './components/NotesList'
-import {useState} from 'react'
+import {useState,useEffect} from 'react'
 import Search from './components/Search'
 
 const App = () => {
-  const [notes,setNotes] = useState([
-    {
-      text:"My first note",
-      date:'1/1/2021',
-      id:1
-    },
-    {
-      text:"My second note",
-      date:'2/1/2021',
-      id:2
-    },
-    {
-      text:"My third note",
-      date:'3/1/2021',
-      id:3
-    },
-    {
-      text:"My fourth note",
-      date:'4/1/2021',
-      id:4
-    },
-    {
-      text:"My fifth note",
-      date:'5/1/2021',
-      id:5
+  const [notes,setNotes] = useState([])
+
+  useEffect(() => {
+    let _notes = localStorage.getItem('notes')
+    if(_notes){
+      setNotes(JSON.parse(_notes))
     }
-  ])
+  },[]) //runs only once
+  useEffect(() =>{
+    localStorage.setItem('notes',JSON.stringify(notes))
+  },[notes])
 
   const addNote = (noteText) => {
     const date = new Date();
