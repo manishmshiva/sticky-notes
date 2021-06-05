@@ -35,7 +35,7 @@ const App = () => {
     const newNote = {
       text:noteText,
       date:date.toLocaleDateString,
-      id:notes.length
+      id:Math.floor(Math.random() * 100) + 1
     }
     const newNotes = [...notes,newNote]
     setNotes(newNotes)
