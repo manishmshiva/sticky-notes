@@ -1,5 +1,6 @@
 import Note from './Note'
 import AddNote from './AddNote'
+import Search from './Search'
 const NotesList = ({notes,addNote,deleteNote}) => {
     return(
         <div className="container">

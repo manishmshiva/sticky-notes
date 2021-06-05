@@ -1,5 +1,6 @@
 import NotesList from './components/NotesList'
 import {useState} from 'react'
+import Search from './components/Search'
 
 const App = () => {
   const [notes,setNotes] = useState([
@@ -46,8 +47,16 @@ const App = () => {
     setNotes(_newNotes)
 
   }
+
+  const [searchText,setSearchText] = useState('')
   
-  return <NotesList notes={notes} addNote={addNote} deleteNote={deleteNote}/>
+  return (
+    <div className="container">
+      <h1>Notes</h1>
+      <Search handleSearch = {setSearchText}/>
+      <NotesList notes={notes.filter(note => note.text.toLowerCase().includes(searchText))} addNote={addNote} deleteNote={deleteNote}/>
+    </div>
+  )
 }
 
 export default App;
