@@ -27,6 +27,7 @@ code {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  white-space: pre-wrap;
 
 }
 
@@ -62,3 +63,4 @@ textarea:focus{
   cursor: pointer;
   background-color: #ededed;
 }
+.icon{cursor: pointer;}

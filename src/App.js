@@ -32,15 +32,22 @@ const App = () => {
 
   const addNote = (noteText) => {
     const date = new Date();
-    const newNote = {
+    let _newNote = {
       text:noteText,
       date:date.toLocaleDateString,
       id:Math.floor(Math.random() * 100) + 1
     }
-    const newNotes = [...notes,newNote]
+    const newNotes = [...notes,_newNote]
     setNotes(newNotes)
   }
-  return <NotesList notes={notes} addNote={addNote}/>
+
+  const deleteNote = (id) =>{
+    let _newNotes = notes.filter((note) => note.id !== id)
+    setNotes(_newNotes)
+
+  }
+  
+  return <NotesList notes={notes} addNote={addNote} deleteNote={deleteNote}/>
 }
 
 export default App;
