@@ -1,6 +1,6 @@
 # Sticky Notes
 
-This project is a single page application using React.js that uses the concept of LocalStorage for storing information on the client side.
+This project is a single page application using [React.js](https://reactjs.org/) that uses the concept of LocalStorage for storing information on the client side.
 
 ![Sticky Notes](./notes.png)
 
@@ -24,4 +24,4 @@ It correctly bundles React in production mode and optimizes the build for the be
 The build is minified and the filenames include the hashes.\
 
 ### Authors
-Manish Shivanandhan - [https://www.manishmshiva.com/](https://www.manishmshiva.com/).
+Manish Shivanandhan - [https://www.manishmshiva.com](https://www.manishmshiva.com).
